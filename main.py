@@ -70,3 +70,25 @@ def tela_editar_tarefa():
     novo_prazo = input("Novo Prazo (DD/MM/AAAA): ") or None
     
     editar_tarefa(tarefa_id, novo_titulo, nova_descricao, novo_prazo)
+
+def tela_concluir_tarefa():
+    listar_tarefas()
+    print("\n--- Concluir Tarefa ---")
+    try:
+        tarefa_id = int(input("ID da tarefa a concluir: "))
+    except ValueError:
+        print("ID inválido.")
+        return
+        
+    concluir_tarefa(tarefa_id)
+
+def tela_excluir_tarefa():
+    listar_tarefas()
+    print("\n--- Excluir Tarefa ---")
+    try:
+        tarefa_id = int(input("ID da tarefa a excluir: "))
+    except ValueError:
+        print("ID inválido.")
+        return
+    
+    excluir_tarefa(tarefa_id)
