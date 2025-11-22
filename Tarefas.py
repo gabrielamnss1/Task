@@ -225,3 +225,31 @@ def editar_tarefa(tarefa_id, novo_titulo=None, nova_descricao=None, novo_prazo_s
         - Usuário logado deve ser o responsável
         - Data deve estar no formato correto
     """
+    tarefas = _carregar_tarefas()
+    tarefa = _encontrar_tarefa(tarefas, tarefa_id)
+    usuario = get_usuario_logado()
+
+    if not tarefa:
+        print(f"Erro: Tarefa com ID {tarefa_id} não encontrada.")
+        return False
+        
+    # Permite edição apenas se o usuário logado for o responsável
+    if tarefa['responsavel_id'] != usuario['id']:
+        print("Erro: Você só pode editar tarefas que você é o responsável.")
+        return False
+
+    modificado = False
+    if novo_titulo:
+        tarefa['titulo'] = novo_titulo
+        modificado = True
+    if nova_descricao:
+        tarefa['descricao'] = nova_descricao
+        modificado = True
+    if novo_prazo_str:
+        try:
+            # Validação básica do formato da data
+            tarefa['prazo'] = datetime.strptime(novo_prazo_str, '%d/%m/%Y').strftime('%d/%m/%Y')
+            modificado = True
+        except ValueError:
+            print("Erro: Formato de prazo inválido. Use DD/MM/AAAA. Nenhuma alteração feita no prazo.")
+            return False
