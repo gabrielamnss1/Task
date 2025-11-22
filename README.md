@@ -44,17 +44,39 @@ Cada tarefa contém:
 ## Estrutura de Arquivos
 
 Task/
-- main.py               # Controlador principal e interface do usuário
+- main.py               # Controlador principal, interface do usuário e loop de eventos
 - usuarios.py          # Módulo de autenticação e gerenciamento de usuários
-- tarefas.py           # Módulo de gerenciamento de tarefas (CRUD)
-- relatorios.py        # Módulo de geração de relatórios e exportação
+- Tarefas.py           # Módulo de gerenciamento de tarefas (CRUD completo)
 - README.md            # Este arquivo
 - utils/
-  - arquivos.py        # Funções de leitura/escrita persistente em JSON
+  - arquivos.py        # Funções de leitura/escrita persistente em JSON (quando implementado)
 
 ---
 
-## Principais Módulos
+## Atualizações Recentes
+
+### Novas Implementações
+- Loop principal com gerenciamento de estado (logado/não logado)
+- Sistema de relatórios com três categorias (Concluídas, Pendentes, Atrasadas)
+- Detecção automática e dinâmica de tarefas com prazos vencidos
+- Funções adicionais: tela_concluir_tarefa(), tela_excluir_tarefa(), tela_relatorios()
+- Exportação de relatórios em arquivo TXT com timestamp
+- Interface CLI completa com menus personalizados
+
+### Melhorias de Código
+- Docstrings detalhadas em todas as funções (padrão PEP 257)
+- Constantes para status de tarefas (evita erros de digitação)
+- Funções auxiliares centralizadas (_encontrar_tarefa, etc.)
+- Tratamento robusto de exceções
+- Separação clara de responsabilidades entre módulos
+
+### Padrões Implementados
+- MVC Simplificado: View (telas), Controller (menus e loop), Model (dados)
+- Event Loop: Padrão reativo para fluxo de aplicação
+- CRUD Completo: Create, Read, Update, Delete em tarefas
+- Factory Pattern: Criação de IDs auto-incrementados
+
+---
 
 ### main.py - Controlador Principal
 Responsável pela interface do usuário e orquestração do fluxo da aplicação.
@@ -141,7 +163,7 @@ Regras de Negócio:
 ### relatorios.py - Geração de Relatórios
 Módulo responsável pela coleta, formatação e exportação de relatórios de tarefas.
 
-Funções Principais:
+Funções Principais (implementadas em main.py):
 - tarefas_concluidas() - Retorna lista de tarefas com status Concluída
 - tarefas_pendentes() - Retorna lista de tarefas com status Pendente
 - tarefas_atrasadas() - Retorna lista de tarefas com prazo vencido
@@ -154,6 +176,8 @@ Funcionalidades:
 - Formatação clara e legível para console
 - Exportação com timestamp para arquivo TXT
 - Cada usuário vê apenas suas próprias tarefas nos relatórios
+
+NOTA: As funções de relatório estão sendo chamadas a partir do main.py. Um módulo relatorios.py separado pode ser criado futuramente para melhor separação de responsabilidades.
 
 ---
 
@@ -384,3 +408,14 @@ Atualizado com novas funcionalidades:
 ## Licença
 
 Este projeto é de código aberto e disponível para fins educacionais.
+
+## Equipe:
+
+Materia:
+Professor:
+Alunos:
+01: Gabriela M. N. Silva
+02: Cristiano Silva Santos
+03: Joel Macena Costa
+04: Josilton José Almeida Santos
+
