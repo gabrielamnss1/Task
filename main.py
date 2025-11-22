@@ -30,3 +30,14 @@ def menu_logado():
     
     escolha = input("Escolha uma opção: ")
     return escolha
+
+def tela_cadastro():
+
+    print("\n--- Cadastro de Novo Usuário ---")
+    nome = input("Nome completo: ")
+    email = input("E-mail: ")
+    login = input("Login (será usado para acesso): ")
+    senha = input("Senha: ")
+    
+    if cadastrar_usuario(nome, email, login, senha):
+        print("Cadastro realizado. Você pode fazer login agora.")
