@@ -5,7 +5,6 @@ EXECUTANDO = True
 
 
 def menu_principal():
-
     print("\n--- TaskFlow - Gerenciador de Tarefas ---")
     print("1. Login")
     print("2. Cadastrar Novo Usuário")
@@ -32,7 +31,6 @@ def menu_logado():
     return escolha
 
 def tela_cadastro():
-
     print("\n--- Cadastro de Novo Usuário ---")
     nome = input("Nome completo: ")
     email = input("E-mail: ")
@@ -41,3 +39,10 @@ def tela_cadastro():
     
     if cadastrar_usuario(nome, email, login, senha):
         print("Cadastro realizado. Você pode fazer login agora.")
+        
+def tela_login():
+    print("\n--- Login ---")
+    login = input("Login: ")
+    senha = input("Senha: ")
+    
+    autenticar_usuario(login, senha)
