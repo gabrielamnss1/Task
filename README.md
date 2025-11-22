@@ -420,18 +420,18 @@ Este projeto é de código aberto e disponível para fins educacionais.
 
 ### Integrantes
 
-| # | Nome Completo |
-|---|---|
-| 1 | Gabriela M. N. Silva |
-| 2 | Cristiano Silva Santos |
-| 3 | Joel Macena Costa |
-| 4 | Josilton José Almeida Santos |
+| # | Nome Completo | Email |
+|---|---|---|
+| 1 | Gabriela M. N. Silva | gabriela.m.silva@ba.estudante.senai.br |
+| 2 | Cristiano Silva Santos | Cristiano.s.santos@ba.estudante.senai.br |
+| 3 | Joel Macena Costa | joel.c@ba.estudante.senai.br |
+| 4 | Josilton José Almeida Santos | josilton.santos@aluno.senai.br |
 
 ### Responsabilidades
-- **Gabriela M. N. Silva**: Desenvolvedora principal, autora da conta GitHub (gabriela.m.silva@ba.estudante.senai.br), integração com repositório remoto
-- **Cristiano Silva Santos**: Desenvolvedor, contribuidor do projeto
-- **Joel Macena Costa**: Desenvolvedor, contribuidor do projeto
-- **Josilton José Almeida Santos**: Desenvolvedor, contribuidor do projeto
+- **Gabriela M. N. Silva** (gabriela.m.silva@ba.estudante.senai.br): Desenvolvedora principal, autora da conta GitHub, integração com repositório remoto
+- **Cristiano Silva Santos** (Cristiano.s.santos@ba.estudante.senai.br): Desenvolvedor, contribuidor do projeto
+- **Joel Macena Costa** (joel.c@ba.estudante.senai.br): Desenvolvedor, contribuidor do projeto
+- **Josilton José Almeida Santos** (josilton.santos@aluno.senai.br): Desenvolvedor, contribuidor do projeto
 
 ### Contribuições
 Todos os integrantes contribuem para:
