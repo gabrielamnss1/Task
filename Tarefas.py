@@ -200,3 +200,28 @@ def _encontrar_tarefa(tarefas, tarefa_id):
         if t['id'] == tarefa_id:
             return t
     return None
+
+
+def editar_tarefa(tarefa_id, novo_titulo=None, nova_descricao=None, novo_prazo_str=None):
+    """
+    Edita informações de uma tarefa existente (UPDATE do CRUD).
+    
+    PARÂMETROS:
+        tarefa_id (int): ID da tarefa a ser editada
+        novo_titulo (str, opcional): Novo título (None = não altera)
+        nova_descricao (str, opcional): Nova descrição (None = não altera)
+        novo_prazo_str (str, opcional): Novo prazo DD/MM/AAAA (None = não altera)
+    
+    RETORNO:
+        bool: True se editou com sucesso, False se houve erro
+    
+    REGRAS DE SEGURANÇA:
+        - Apenas o responsável pela tarefa pode editá-la
+        - Valida formato de data se novo prazo for fornecido
+        - Campos None são mantidos sem alteração
+    
+    VALIDAÇÕES:
+        - Tarefa deve existir
+        - Usuário logado deve ser o responsável
+        - Data deve estar no formato correto
+    """
