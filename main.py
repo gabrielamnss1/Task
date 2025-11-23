@@ -45,7 +45,8 @@ from tarefas import (
     excluir_tarefa
 )
 from relatorios import (
-    tarefas_concluidas, tarefas_pendentes, tarefas_atrasadas
+    tarefas_concluidas, tarefas_pendentes, tarefas_atrasadas,
+    exibir_relatorio, exportar_relatorio
 )
 
 # Variável global para controle do loop principal
@@ -60,7 +61,6 @@ def menu_principal():
         1. Login - Acessar o sistema
         2. Cadastrar Novo Usuário - Criar conta
         3. Sair - Encerrar aplicação
-    
     RETORNO:
         str: Opção escolhida pelo usuário
     """
@@ -68,7 +68,7 @@ def menu_principal():
     print("1. Login")
     print("2. Cadastrar Novo Usuário")
     print("3. Sair")
-    
+      
     escolha = input("Escolha uma opção: ")
     return escolha
 
